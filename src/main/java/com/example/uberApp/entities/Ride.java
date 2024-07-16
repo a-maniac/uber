@@ -8,6 +8,7 @@ import org.locationtech.jts.geom.Point;
 
 import java.time.LocalDateTime;
 
+@Entity
 public class Ride {
 
 
@@ -37,6 +38,8 @@ public class Ride {
 
     @Enumerated(EnumType.STRING)
     private RideStatus rideStatus;
+
+    private String otp;
 
     private Double fare;
     private LocalDateTime startedAt; //driver starts the ride
