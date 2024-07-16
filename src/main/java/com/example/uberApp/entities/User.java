@@ -2,11 +2,15 @@ package com.example.uberApp.entities;
 
 import com.example.uberApp.entities.enums.Role;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Set;
 
 @Entity
 @Table(name="app_user")
+@Getter
+@Setter
 public class User {
 
     @Id
