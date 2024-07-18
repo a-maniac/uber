@@ -4,6 +4,7 @@ import com.example.uberApp.dto.RideRequestDto;
 import com.example.uberApp.entities.Driver;
 import com.example.uberApp.entities.Ride;
 import com.example.uberApp.entities.enums.RideStatus;
+import com.example.uberApp.repositories.DriverRepository;
 import com.example.uberApp.repositories.RideRepository;
 import com.example.uberApp.repositories.RiderRepository;
 import com.example.uberApp.services.RideService;
@@ -21,6 +22,9 @@ public class RideServiceImpl implements RideService {
 
     @Autowired
     RiderRepository riderRepository;
+
+    @Autowired
+    DriverRepository driverRepository;
 
     @Override
     public Ride getRideByID(Long rideId) {
@@ -50,6 +54,7 @@ public class RideServiceImpl implements RideService {
 
     @Override
     public Page<Ride> getAllRidesOfDriver(Long driverId, PageRequest pageRequest) {
-        return null;
+
+        return driverRepository.findAll(driverId,pageRequest);
     }
 }
