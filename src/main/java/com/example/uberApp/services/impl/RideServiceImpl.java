@@ -4,16 +4,27 @@ import com.example.uberApp.dto.RideRequestDto;
 import com.example.uberApp.entities.Driver;
 import com.example.uberApp.entities.Ride;
 import com.example.uberApp.entities.enums.RideStatus;
+import com.example.uberApp.repositories.RideRepository;
+import com.example.uberApp.repositories.RiderRepository;
 import com.example.uberApp.services.RideService;
+import org.modelmapper.internal.bytebuddy.implementation.auxiliary.AuxiliaryType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
 public class RideServiceImpl implements RideService {
+
+    @Autowired
+    RideRepository rideRepository;
+
+    @Autowired
+    RiderRepository riderRepository;
+
     @Override
     public Ride getRideByID(Long rideId) {
-        return null;
+        return rideRepository.findById(rideId).orElse(null);
     }
 
     @Override
@@ -33,7 +44,8 @@ public class RideServiceImpl implements RideService {
 
     @Override
     public Page<Ride> getAllRidesOfRider(Long riderId, PageRequest pageRequest) {
-        return null;
+
+        return riderRepository.findAll(riderId,pageRequest);
     }
 
     @Override
