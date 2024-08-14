@@ -46,15 +46,15 @@ public class RideServiceImpl implements RideService {
         return null;
     }
 
-    @Override
-    public Page<Ride> getAllRidesOfRider(Long riderId, PageRequest pageRequest) {
+//    @Override
+//    public Page<Ride> getAllRidesOfRider(Long riderId, PageRequest pageRequest) {
+//
+//        return riderRepository.findAll(riderId);
+//    }
 
-        return riderRepository.findAll(riderId,pageRequest);
-    }
-
-    @Override
-    public Page<Ride> getAllRidesOfDriver(Long driverId, PageRequest pageRequest) {
-
-        return driverRepository.findAll(driverId,pageRequest);
-    }
+//    @Override
+//    public Page<Ride> getAllRidesOfDriver(Long driverId, PageRequest pageRequest) {
+//
+//        return driverRepository.findAll(driverId,pageRequest);
+//    }
 }

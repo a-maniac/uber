@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 
 public interface RiderRepository extends JpaRepository<Rider,Long> {
-    Page<Ride> findAll(Long riderId, PageRequest pageRequest);
+    //Page<Ride> findAll(Long riderId /* ,PageRequest pageRequest */);
 }

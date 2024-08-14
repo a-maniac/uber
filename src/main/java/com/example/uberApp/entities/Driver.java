@@ -21,6 +21,8 @@ public class Driver {
     private Double rating;
     private boolean available;
 
+    private String vehicleId;
+
     @Column(columnDefinition = "Geometry(Point,4326)") // for earth's longitude and latitude
     Point currentLocation;
 
